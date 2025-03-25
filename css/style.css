@@ -1,0 +1,438 @@
+:root {
+  /* Color Palette */
+  --background-color: black;
+  --primary-color: #ffff00;
+  --secondary-color: #0d0c0c;
+  --highlight-color: #a3540a;
+  --accent-color: #3a8100;
+  --border-color: #ffff00;
+  --text-color: white;
+
+  /* Spacing */
+  --padding-large: 4rem;
+  --padding-medium: 2rem;
+  --padding-small: 1rem;
+
+  /* Font Sizes */
+  --font-size-small: 1rem;
+  --font-size-medium: 1.1rem;
+  --font-size-large: 2rem;
+  --font-size-xlarge: 1.5rem;
+
+  /* Border Radius */
+  --border-radius: 15px;
+
+  /* Dimensions */
+  --popup-width: 450px;
+  --game-width: 400px;
+  --game-height: 400px;
+  --hole-width: 90%;
+  --hole-height: 90%;
+  --cursor-width: 100px;
+  --cursor-height: 110px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*-----------POPUP----------*/
+.popup-container,
+#congratulations {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  width: var(--popup-width);
+}
+
+.popup,
+.congratulations-inner {
+  padding: var(--padding-large);
+  background-color: var(--secondary-color);
+  border: solid 5px var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup img {
+  width: 15%;
+}
+
+.popup h1 {
+  white-space: nowrap;
+  width: 100%;
+  display: inline;
+}
+
+.popup h1,
+p {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.popup p {
+  font-size: var(--font-size-medium);
+}
+
+.popup button {
+  position: relative;
+  display: inline-block;
+}
+
+.btns,
+.btn-win,
+#startGameBtn {
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  width: 70%;
+  margin-top: var(--padding-small);
+  padding: var(--padding-small);
+  border-radius: var(--border-radius);
+  box-shadow: 2px 2px 0px 3px var(--border-color);
+  text-transform: uppercase;
+  background-color: var(--secondary-color);
+  border: solid 1px var(--border-color);
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+.btns:hover,
+.btn-win:hover,
+#startGameBtn:hover {
+  color: black;
+  background-color: var(--primary-color);
+  box-shadow: inset 0px 5px 0px rgba(0, 0, 0, 0.5),
+    0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+span {
+  display: inline;
+  color: var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+span:hover {
+  color: red;
+}
+
+/*---------SECTION QUESTIONS------------*/
+.section-questions {
+  padding-top: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-q1 {
+  display: flex;
+}
+
+.div-q2 {
+  display: none;
+}
+
+.div-quiz {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
+.div-quiz h2 {
+  padding-top: var(--padding-medium);
+  padding-bottom: var(--padding-medium);
+  color: var(--text-color);
+}
+
+.div-quiz p {
+  font-size: var(--font-size-small);
+}
+
+.div-quiz div {
+  padding-top: var(--padding-medium);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.div-quiz button {
+  width: 40%;
+  font-size: var(--font-size-small);
+}
+
+/*-------------------QUESTIONS OTHER----------------*/
+.div-q2,
+.div-q3,
+.div-q4,
+.div-congrats {
+  display: none;
+}
+
+/*------------CONGRATS DIV----------*/
+.div-congrats p {
+  font-size: var(--font-size-small);
+  padding-bottom: var(--padding-medium);
+  line-height: 2;
+}
+
+/*-----------GAME----------*/
+.section-game {
+  padding-top: var(--padding-small);
+  width: 50%;
+  display: none;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-score {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+  color: var(--text-color);
+  width: 52%;
+  background-color: var(--secondary-color);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.div-score h1 {
+  padding-bottom: 0.5rem;
+}
+
+.div-score h1 span {
+  padding-left: 0.5rem;
+}
+
+#startGameBtn {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.game {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: var(--game-width);
+  height: var(--game-height);
+  gap: 8px;
+  border: 2px solid black;
+  margin: auto;
+  background-color: var(--accent-color);
+}
+
+.hole {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--hole-width);
+  height: var(--hole-height);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+    inset 0 20px 20px 15px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.hole .mole {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  animation: rise 0.3s ease-out;
+}
+
+.cursor {
+  height: var(--cursor-height);
+  width: var(--cursor-width);
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-image: url("../assets/hammer.png");
+  background-size: 100% 100%;
+  transform: translate(-20%, -20%);
+  transition: transform 0.1s;
+  pointer-events: none;
+}
+
+.cursor.active {
+  transform: translate(-20%, -20%) rotate(-45deg);
+}
+
+@keyframes rise {
+  0% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.congratulations-inner {
+  width: 30%;
+  height: 60%;
+}
+
+#congratulations h2 {
+  font-size: var(--font-size-large);
+  color: var(--text-color);
+}
+
+.p-score {
+  font-size: var(--font-size-xlarge);
+}
+
+.disclaimer {
+  font-size: var(--font-size-small);
+}
+
+/* --------- RESPONSIVE STYLES --------- */
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .popup,
+  .congratulations-inner {
+    width: 80%;
+    padding: var(--padding-medium);
+  }
+
+  .div-quiz {
+    width: 80%;
+  }
+  .section-game {
+    width: 90%;
+    height: 100vh;
+  }
+  .game {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hole {
+    width: 30%;
+    height: 30%;
+  }
+  .mole {
+    width: 5%;
+  }
+  .div-score {
+    width: 100%;
+  }
+
+  #startGameBtn {
+    width: 90%;
+  }
+
+  .popup h1 {
+    font-size: var(--font-size-medium);
+  }
+
+  .popup p {
+    font-size: var(--font-size-small);
+  }
+
+  .div-quiz button {
+    width: 80%;
+  }
+
+  .div-congrats p {
+    font-size: var(--font-size-small);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow: auto;
+  }
+
+  .popup,
+  .congratulations-inner {
+    width: 90%;
+    padding: var(--padding-small);
+  }
+
+  .div-quiz {
+    width: 90%;
+  }
+  .section-game {
+    width: 90%;
+    height: 100vh;
+  }
+  .game {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .hole {
+    width: 25%;
+    height: 25%;
+  }
+
+  .div-score {
+    width: 100%;
+  }
+
+  #startGameBtn {
+    width: 80%;
+  }
+
+  .popup h1 {
+    font-size: var(--font-size-small);
+  }
+
+  .popup p {
+    font-size: var(--font-size-small);
+  }
+
+  .div-quiz button {
+    width: 80%;
+  }
+
+  .div-congrats p {
+    font-size: var(--font-size-small);
+  }
+}

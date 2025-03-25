@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--APP-->
+    <script src="./index.js" defer></script>
+    <!--STYLESHEET-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <!---FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>One Tap</title>
+  </head>
+  <body>
+    <main>
+      <!-----POPUP---->
+      <div class="popup-containter">
+        <div class="popup">
+          <img src="./assets/giftbox.svg" alt="Gift Img" />
+          <h1 class="montserrat-alternates-regular">
+            Want an <span>upgrade</span>?
+          </h1>
+          <p class="montserrat-alternates-regular">
+            Answer the following questions and play a fun and quick game to win
+            an
+            <span class="montserrat-alternates-extrabold">IPhone 14 Pro</span>
+          </p>
+          <button id="btnPopup" class="btns montserrat-alternates-extrabold">
+            Let's Get It
+          </button>
+        </div>
+      </div>
+      <!---QUESTIONS--->
+      <!--------Q1-------->
+      <section class="section-questions">
+        <img src="./assets/logo.svg" alt="Logo" />
+        <div class="div-q1 div-quiz">
+          <h2 class=" montserrat-alternates-bold">Question 1/4</h2>
+          <p class="montserrat-alternates-regular">Which year was the first iPhone released?</p>
+          <div>
+            <button class="btns montserrat-alternates-bold">2005</button>
+            <button class="btns montserrat-alternates-bold" id="question">
+              2007
+            </button>
+            <button class="btns montserrat-alternates-bold">2010</button>
+            <button class="btns montserrat-alternates-bold">2011</button>
+          </div>
+        </div>
+        <!--------Q2-------->
+        <div class="div-q2 div-quiz">
+          <h2 class=" montserrat-alternates-bold">Question 2/4</h2>
+          <p class="montserrat-alternates-regular">What is the name of Apple’s voice assistant?</p>
+          <div>
+            <button class="btns montserrat-alternates-bold">Alexa</button>
+
+            <button class="btns montserrat-alternates-bold">Cortana</button>
+            <button class="btns montserrat-alternates-bold" id="question">
+              Siri
+            </button>
+            <button class="btns montserrat-alternates-bold">Ash</button>
+          </div>
+        </div>
+        <!--------Q3-------->
+        <div class="div-q3 div-quiz">
+          <h2 class=" montserrat-alternates-bold">Question 3/4</h2>
+          <p class="montserrat-alternates-regular"Which iPhone model introduced Face ID?</p>
+          <div>
+            <button class="btns montserrat-alternates-bold">iPhone 7</button>
+
+            <button class="btns montserrat-alternates-bold">iPhone 11</button>
+            <button class="btns montserrat-alternates-bold" id="question">
+              iPhone X
+            </button>
+            <button class="btns montserrat-alternates-bold">iPhone 12</button>
+          </div>
+        </div>
+        <!--------Q4-------->
+        <div class="div-q4 div-quiz">
+          <h2 class=" montserrat-alternates-bold">Question 4/4</h2>
+          <p class="montserrat-alternates-regular">What does the ‘i’ in iPhone stand for?</p>
+          <div>
+            <button class="btns montserrat-alternates-bold">Internet</button>
+            <button class="btns montserrat-alternates-bold" id="question">
+              Intelligent
+            </button>
+            <button class="btns montserrat-alternates-bold">Interactive</button>
+            <button class="btns montserrat-alternates-bold">Innovation</button>
+          </div>
+        </div>
+        <!--------CONGRATS-------->
+        <div class="div-congrats div-quiz">
+          <h2>Congratulations!</h2>
+          <p class="montserrat-alternates-regular">
+            Thank you for answering all the questions 🎉 Want to take on a
+            quick, thrilling game for a chance to win an iPhone?
+          </p>
+          <button class="btn-win montserrat-alternates-bold">I WILL WIN</button>
+        </div>
+      </section>
+      <!--GAME REMAINS HIDDEN-->
+      <section class="section-game">
+        <div class="div-score">
+          <h1>Score<span id="score">0</span></h1>
+        </div>
+
+        <div id="game" class="game">
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+        </div>
+        <div class="cursor"></div>
+        <div id="congratulations" style="display: none">
+          <div class="congratulations-inner">
+            <h2 class="montserrat-alternates-bold">Congratulations!</h2>
+            <p class="p-score montserrat-alternates-regular">
+              Your final score is <span id="final-score"></span>
+            </p>
+            <button class="btn-win montserrat-alternates-bold">
+              GET IPHONE 14 PRO
+            </button>
+            <p class="disclaimer montserrat-alternates-regular">
+              A payment of 2 pounds is required
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
