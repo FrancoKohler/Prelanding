@@ -70,7 +70,9 @@ const scoreEl = document.getElementById("score");
 let score = 0;
 let gameStarted = false;
 
-const sound = new Audio("../assets/smash.mp3");
+const sound = new Audio(
+  "https://github.com/FrancoKohler/Prelanding/blob/main/assets/smash.mp3"
+);
 const congratulationsOverlay = document.getElementById("congratulations");
 const finalScoreElement = document.getElementById("final-score");
 
@@ -100,14 +102,16 @@ function run() {
 
   const img = document.createElement("img");
   img.classList.add("mole");
-  img.src = "../assets/giftbox.svg";
+  img.src =
+    "https://github.com/FrancoKohler/Prelanding/blob/main/assets/giftbox.svg";
 
   img.addEventListener("click", () => {
     score += 10;
     sound.play();
     scoreEl.textContent = score;
 
-    img.src = "../assets/iphone.svg";
+    img.src =
+      "https://github.com/FrancoKohler/Prelanding/blob/main/assets/iphone.svg";
 
     /*----SCORE LIMIT AND IMG DELAY---*/
     setTimeout(() => {
