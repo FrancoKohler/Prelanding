@@ -100,19 +100,19 @@ function run() {
 
   const img = document.createElement("img");
   img.classList.add("mole");
-  img.src = "../assets/mole.png";
+  img.src = "../assets/giftbox.svg";
 
   img.addEventListener("click", () => {
     score += 10;
     sound.play();
     scoreEl.textContent = score;
 
-    img.src = "../assets/mole-whacked.png";
+    img.src = "../assets/iphone.svg";
 
     /*----SCORE LIMIT AND IMG DELAY---*/
     setTimeout(() => {
       hole.removeChild(img);
-      if (score >= 200) {
+      if (score >= 180) {
         stopGame();
       } else {
         run();
@@ -125,7 +125,7 @@ function run() {
   /*---TIMER FOR MOLE DISAPPEAR---*/
   timer = setTimeout(() => {
     hole.removeChild(img);
-    if (score >= 200) {
+    if (score >= 180) {
       stopGame();
     } else {
       run();

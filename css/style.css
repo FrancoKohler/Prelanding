@@ -324,6 +324,11 @@ span:hover {
 
 /* --------- RESPONSIVE STYLES --------- */
 
+@media (max-width: 1024px) {
+  .div-score {
+    width: 78%;
+  }
+}
 @media (max-width: 768px) {
   body {
     overflow: auto;
@@ -350,14 +355,15 @@ span:hover {
   }
 
   .hole {
-    width: 30%;
-    height: 30%;
+    width: 30% !important;
+    height: 30% !important;
   }
   .mole {
-    width: 5%;
+    width: 80px !important;
+    z-index: 999999 !important;
   }
   .div-score {
-    width: 100%;
+    width: 90%;
   }
 
   #startGameBtn {
@@ -398,7 +404,6 @@ span:hover {
     justify-content: center;
     text-align: center;
     padding: var(--padding-medium);
-    background: #fff; /* Add a background for visibility */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
@@ -474,7 +479,6 @@ span:hover {
     justify-content: center;
     text-align: center;
     padding: var(--padding-small);
-    background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
